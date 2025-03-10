@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'cd simple-java-maven-app-master && mvn -B -DskipTests clean package'
+                sh 'cd /var/lib/jenkins/workspace/test2/simple-java-maven-app-master && mvn -B -DskipTests clean package'
             }
         }
         stage('Test') {
