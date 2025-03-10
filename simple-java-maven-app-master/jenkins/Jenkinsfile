@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'cd /var/lib/jenkins/workspace/test2/simple-java-maven-app-master'
-                sh 'mvn -B -DskipTests clean package'
+                sh 'pwd && mvn -B -DskipTests clean package'
             }
         }
         stage('Test') {
