@@ -15,11 +15,13 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh """cd /var/lib/jenkins/workspace/test2/simple-java-maven-app-master 
+                mvn test"""
             }
             post {
                 always {
-                    junit 'target/surefire-reports/*.xml'
+                    junit """cd /var/lib/jenkins/workspace/test2/simple-java-maven-app-master 
+                    target/surefire-reports/*.xml"""
                 }
             }
         }
