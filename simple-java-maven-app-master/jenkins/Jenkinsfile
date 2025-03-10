@@ -20,14 +20,13 @@ pipeline {
             }
             post {
                 always {
-                    junit """cd /var/lib/jenkins/workspace/test2/simple-java-maven-app-master 
-                    target/surefire-reports/*.xml"""
+                    junit '/var/lib/jenkins/workspace/test2/simple-java-maven-app-master/target/surefire-reports/*.xml'
                 }
             }
         }
         stage('Deliver') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                sh './simple-java-maven-app-master/jenkins/scripts/deliver.sh'
             }
         }
     }
