@@ -20,8 +20,8 @@ pipeline {
             }
             post {
                 always {
-                    sh """cd /var/lib/jenkins/workspace/test2/simple-java-maven-app-master
-                    junit /var/lib/jenkins/workspace/test2/simple-java-maven-app-master/target/surefire-reports/*.xml"""
+                    sh """cd /var/lib/jenkins/workspace/test2/simple-java-maven-app-master 
+                    junit ./target/surefire-reports/*.xml"""
                 }
             }
         }
